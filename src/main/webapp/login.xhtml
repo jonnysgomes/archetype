@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Login</title>
+	<meta http-equiv="content-type" content="text/xhtml;charset=UTF-8" />
+	<link href="style/default.css" type="text/css" rel="stylesheet" />
+</h:head>
+<h:body>
+	<h:form prependId="false" >
+		<p:growl id="growlMessage" showDetail="true" />
+		
+		<p:panel header="Autenticação" style="width:250px; margin:auto;">
+			<h:panelGrid columns="3">
+				<h:outputLabel for="username" value="Username: "/>
+				<p:inputText id="username" value="#{loginBean.username}"/>
+				<h:message for="username" errorClass="error"/>
+				<h:outputLabel for="password" value="Password: "/>
+				<p:password id="password" value="#{loginBean.password}" feedback="false"/>
+				<h:message for="password" errorClass="error" />
+				<h:outputText value=""/>
+				<p:commandButton type="submit" id="login" action="#{loginBean.login}" value="Ok" update="growlMessage"/>
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>
