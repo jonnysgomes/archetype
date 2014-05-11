@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app id="WebApp_ID" version="2.5" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
+<web-app id="WebApp_ID" version="2.5"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	<display-name>archetype</display-name>
-	
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-	
+
 	<!-- JSF 2.X -->
 	<servlet>
 		<display-name>FacesServlet</display-name>
@@ -24,8 +23,8 @@
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
 		<param-value>Development</param-value>
 	</context-param>
-	<!--  -->
-	
+	<!-- -->
+
 	<!-- Configuracao do Spring -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -35,19 +34,19 @@
 	    </param-value>
 	</context-param>
 	<listener>
-	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<!--  -->
-	
-	<!-- Configuracao do Spring Security-->
+	<!-- -->
+
+	<!-- Configuracao do Spring Security -->
 	<filter>
-	    <filter-name>springSecurityFilterChain</filter-name>
-	    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>
 	<filter-mapping>
-	    <filter-name>springSecurityFilterChain</filter-name>
-	    <url-pattern>/*</url-pattern>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	<!--  -->
-	
+	<!-- -->
+
 </web-app>
